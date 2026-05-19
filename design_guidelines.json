@@ -1,0 +1,143 @@
+{
+  "theme_and_archetype": {
+    "theme": "light",
+    "archetype": "4",
+    "archetype_name": "Swiss & High-Contrast",
+    "rationale": "Developer tool and AI tracing dashboard require authority, clarity, and truth-first design. The Swiss archetype provides objective, rigid, functional aesthetics prioritizing data visibility over decoration."
+  },
+  "typography": {
+    "fonts": {
+      "headings": {
+        "family": "IBM Plex Sans",
+        "weights": ["400", "600"],
+        "css_class": "font-sans"
+      },
+      "body": {
+        "family": "IBM Plex Sans",
+        "weights": ["400", "500"],
+        "css_class": "font-sans"
+      },
+      "code": {
+        "family": "IBM Plex Mono",
+        "weights": ["400"],
+        "css_class": "font-mono tracking-tight"
+      }
+    },
+    "hierarchy": {
+      "h1": "text-3xl font-semibold tracking-tight leading-none text-zinc-900",
+      "h2": "text-2xl font-semibold tracking-tight text-zinc-900",
+      "h3": "text-lg font-medium tracking-tight text-zinc-900",
+      "h4": "text-sm font-semibold tracking-tight uppercase text-zinc-500",
+      "body": "text-sm text-zinc-700 leading-relaxed",
+      "label": "text-xs font-semibold uppercase tracking-[0.1em] text-zinc-500",
+      "code": "text-xs font-mono text-zinc-800 bg-zinc-50/80 p-1"
+    }
+  },
+  "colors": {
+    "background": {
+      "page": "#FFFFFF",
+      "sidebar": "#F8F9FA",
+      "panel": "#FFFFFF"
+    },
+    "text": {
+      "primary": "#09090B",
+      "secondary": "#52525B",
+      "muted": "#71717A"
+    },
+    "border": {
+      "default": "#E4E4E7",
+      "focus": "#2563EB"
+    },
+    "accents": {
+      "primary": "#002FA7",
+      "primary_hover": "#00227A",
+      "secondary": "#F4F4F5",
+      "secondary_hover": "#E4E4E7"
+    },
+    "status": {
+      "inspector": "#8B5CF6",
+      "writer": "#3B82F6",
+      "validator": "#F59E0B",
+      "executor": "#10B981",
+      "reflector": "#EC4899",
+      "error": "#EF4444"
+    }
+  },
+  "layout_and_spacing": {
+    "spacing_scale": "Tailwind standard (p-1 to p-12), highly dense for developer tool. Generous padding inside empty states.",
+    "grid_strategy": "Control Room Grid (Dense). 3-pane IDE layout. Screen height is 100vh locked.",
+    "structure": {
+      "app_container": "h-screen w-full flex overflow-hidden bg-white text-zinc-900",
+      "left_sidebar": "w-64 border-r border-zinc-200 flex flex-col bg-zinc-50 shrink-0",
+      "main_center": "flex-1 flex flex-col min-w-0 border-r border-zinc-200",
+      "right_panel": "w-96 flex flex-col bg-white shrink-0"
+    },
+    "surface_strategy": "Grid Borders (The 'Technical' Look). Explicit 1px solid borders separating all functional zones. Minimal shadow, flat backgrounds. Max border-radius: 4px (rounded-sm) for a sharp, authoritative feel."
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#002FA7] text-white hover:bg-[#00227A] rounded-sm px-4 py-2 text-sm font-medium transition-colors",
+      "secondary": "bg-zinc-100 text-zinc-900 hover:bg-zinc-200 border border-zinc-200 rounded-sm px-4 py-2 text-sm font-medium transition-colors",
+      "icon": "p-1.5 text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 rounded-sm"
+    },
+    "agent_trace_node": {
+      "container": "relative p-3 border border-zinc-200 rounded-sm bg-white shadow-sm flex items-start gap-3",
+      "active": "border-blue-500 ring-1 ring-blue-500/20 shadow-md",
+      "success": "border-emerald-500 bg-emerald-50/30",
+      "error": "border-red-500 bg-red-50/30"
+    },
+    "code_editor": {
+      "container": "font-mono text-sm bg-zinc-950 text-zinc-50 p-4 overflow-auto relative rounded-sm"
+    },
+    "schema_tree": {
+      "database_item": "flex items-center gap-2 px-2 py-1.5 hover:bg-zinc-100 cursor-pointer text-sm font-medium text-zinc-800",
+      "table_item": "flex items-center gap-2 pl-6 pr-2 py-1 hover:bg-zinc-100 cursor-pointer text-sm text-zinc-700",
+      "column_item": "flex items-center justify-between pl-10 pr-2 py-0.5 text-xs text-zinc-500 hover:text-zinc-900"
+    },
+    "chat_input": {
+      "container": "relative border-t border-zinc-200 p-4 bg-white",
+      "input": "w-full pl-4 pr-12 py-3 rounded-sm border border-zinc-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-sm placeholder:text-zinc-400 bg-zinc-50"
+    },
+    "shadcn_overrides": {
+      "card": "rounded-sm border-zinc-200 shadow-none",
+      "tabs": "bg-transparent p-0 border-b border-zinc-200 rounded-none",
+      "tab_trigger": "rounded-none data-[state=active]:border-b-2 data-[state=active]:border-[#002FA7] data-[state=active]:shadow-none px-4 py-2"
+    }
+  },
+  "motion_and_interactions": {
+    "trace_animation": "Use Framer Motion to animate the trace line connecting agent nodes. 'Tracing Beam' effect on active agent node.",
+    "hover_states": "Crisp background changes (bg-zinc-100) and text color shifts. Fast transitions (duration-150).",
+    "loading": "Monospace typing effect for SQL generation, pulsed opacity for active agent nodes."
+  },
+  "assets_and_media": {
+    "icons": {
+      "library": "lucide-react",
+      "usage": "Use stroke-width 1.5 for a sharp, technical appearance. 16px (w-4 h-4) standard size."
+    },
+    "image_urls": [
+      {
+        "url": "https://static.prod-images.emergentagent.com/jobs/ae92613b-bca4-4107-bedd-9513c92eb8fb/images/1ca1c50439db6c15e6ad30ed2761c5fd6bc26f0e920d4ea1640bc1f20258bdd6.png",
+        "category": "hero_background_or_empty_state",
+        "description": "Abstract 3D illustration of a glowing database server with multiple interconnected nodes pulsing with data streams. Dark minimalist background, Swiss design aesthetic. Can be used as a subtle faded background for empty states or login."
+      },
+      {
+        "url": "https://static.prod-images.emergentagent.com/jobs/ae92613b-bca4-4107-bedd-9513c92eb8fb/images/847d74ea8a7e978653434218d1d58f9cb20a7ae55e160aec2b2c50b8f9819010.png",
+        "category": "agent_collaboration_empty_state",
+        "description": "Minimalist high-contrast abstract representation of AI agents collaborating. Use in the central chat/trace area before a query is initiated."
+      }
+    ]
+  },
+  "accessibility_and_testing": {
+    "contrast": "All text strictly follows APCA and WCAG AA guidelines. No gray-on-gray unreadable text.",
+    "test_attributes": "Enforce data-testid attributes on all interactive elements (e.g., data-testid='execute-query-button', data-testid='schema-table-toggle')."
+  },
+  "instructions_to_main_agent": [
+    "Build a 3-pane IDE layout (Schema, Chat/Trace, Results). Ensure the height is h-screen overflow-hidden with individual pane scrolling.",
+    "Use purely Shadcn UI, Recharts, and Tailwind. Install 'lucide-react' for icons.",
+    "Agent Node Tracing: Visually represent the 'Schema Inspector -> SQL Writer -> Validator -> Executor -> Reflector' loop. Use the status colors provided.",
+    "Apply Archetype 4 (Swiss & High Contrast): Stark white backgrounds, 1px sharp borders, #002FA7 primary accent, IBM Plex Sans/Mono fonts.",
+    "Implement Tabs in the right panel: 'Generated SQL' (Code editor view), 'Data Table' (Shadcn Table), and 'Charts' (Recharts).",
+    "Always left-align labels and data. Avoid centering in technical dashboards.",
+    "For the empty state of the chat/trace area, use one of the provided abstract agent collaboration images, heavily faded (opacity-20)."
+  ]
+}
