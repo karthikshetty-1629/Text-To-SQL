@@ -4,6 +4,7 @@ aiosignal==1.4.0
 aiosqlite==0.22.1
 annotated-doc==0.0.4
 annotated-types==0.7.0
+anthropic==0.69.0
 anyio==4.13.0
 ast_serialize==0.3.0
 attrs==26.1.0
@@ -17,10 +18,8 @@ charset-normalizer==3.4.7
 click==8.3.3
 cryptography==48.0.0
 distro==1.9.0
-dnspython==2.8.0
 ecdsa==0.19.2
 email-validator==2.3.0
-emergentintegrations==0.1.0
 fastapi==0.110.1
 fastuuid==0.14.0
 filelock==3.29.0
@@ -60,7 +59,6 @@ markdown-it-py==4.2.0
 MarkupSafe==3.0.3
 mccabe==0.7.0
 mdurl==0.1.2
-motor==3.3.1
 multidict==6.7.1
 mypy==2.1.0
 mypy_extensions==1.1.0
@@ -87,7 +85,6 @@ pydantic_core==2.46.4
 pyflakes==3.4.0
 Pygments==2.20.0
 PyJWT==2.12.1
-pymongo==4.5.0
 PyMySQL==1.1.3
 pyparsing==3.3.2
 pytest==9.0.3

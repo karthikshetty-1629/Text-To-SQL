@@ -1,7 +1,8 @@
 """Unit tests for validator agent safety logic (no LLM calls)."""
 import asyncio
+import os
 import sys
-sys.path.insert(0, "/app/backend")
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 from agents import validator, TraceCollector
 
 

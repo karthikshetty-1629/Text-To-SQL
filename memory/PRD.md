@@ -13,8 +13,8 @@ Multi-Agent Text-to-SQL Intelligence System | Python, LangGraph, LangChain, Mist
   - `ValidatorAgent` → safety + syntactic validation (sqlparse, forbidden-stmt block)
   - `ExecutorAgent` → runs SQL on target DB via SQLAlchemy
   - `ReflectorAgent` → quality check + self-reflection retry loop (max 2 retries)
-  - Full per-session trace persisted in MongoDB
-- **LLM**: Claude Sonnet 4.5 via Emergent Universal LLM Key (anthropic/claude-sonnet-4-5-20250929)
+  - Full per-session trace persisted in a bundled SQLite file (`backend/demo_dbs/sessions.db`) — no external DB service required
+- **LLM**: Hybrid client (`backend/llm_client.py`) — Claude Sonnet 4.5 via the official Anthropic SDK as primary, OpenAI as automatic fallback; provider/model selectable via `LLM_PROVIDER`/`ANTHROPIC_MODEL`/`OPENAI_MODEL` env vars, keys via `ANTHROPIC_API_KEY`/`OPENAI_API_KEY`
 - **Databases**: Demo SQLite (Chinook music store + HR/Projects) seeded at startup; custom Postgres/MySQL/SQLite connections supported
 - **Frontend** (React): 3-pane Swiss high-contrast IDE layout — Schema sidebar / Chat+Trace center / Tabs (SQL/Table/Chart) right; IBM Plex Sans/Mono; Recharts visualizations
 

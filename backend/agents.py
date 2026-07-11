@@ -3,25 +3,15 @@
 Pipeline: SchemaInspector -> SQLWriter -> Validator -> Executor -> Reflector
 Reflector can route back to SQLWriter (max 2 retries) for self-reflection.
 """
-import os
 import re
 import json
 import sqlparse
 import uuid
 from datetime import datetime, timezone
 from typing import Dict, Any, List, Optional, Callable
-from emergentintegrations.llm.chat import LlmChat, UserMessage
 
 from db_manager import get_schema, schema_to_prompt, execute_sql
-
-EMERGENT_LLM_KEY = os.environ.get("EMERGENT_LLM_KEY")
-MODEL_PROVIDER = "anthropic"
-MODEL_NAME = "claude-sonnet-4-5-20250929"
-
-
-async def _llm_call(system_msg: str, user_msg: str, session_id: str) -> str:
-    chat = LlmChat(api_key=EMERGENT_LLM_KEY, session_id=session_id, system_message=system_msg).with_model(MODEL_PROVIDER, MODEL_NAME)
-    return await chat.send_message(UserMessage(text=user_msg))
+from llm_client import llm_call as _llm_call
 
 
 def _extract_sql(text: str) -> str:
