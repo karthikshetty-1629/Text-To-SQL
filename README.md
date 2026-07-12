@@ -2,7 +2,7 @@
 
 Ask a database a question in plain English. A pipeline of five specialized agents
 inspects the schema, writes the SQL, validates it for safety, executes it, and
-reflects on the result — retrying itself on failure — before handing back an
+reflects on the result - retrying itself on failure - before handing back an
 answer, a chart, and a full trace of what every agent did and why.
 
 Ships with two demo databases (Chinook music store, HR/Projects) seeded automatically,
